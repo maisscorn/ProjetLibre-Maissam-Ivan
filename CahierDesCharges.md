@@ -56,3 +56,19 @@ Ce projet a été réalisé en binôme :
 |--------|------------------|
 | **Maïssam** | Pas encore de rôle |
 | **Ivan** | Pas encore de rôle |
+
+## Installation
+
+```bash
+# Cloner le dépôt
+git clone <url-du-depot>
+
+# Se placer dans le dossier du projet
+cd nom-du-projet
+
+# Lancer un serveur PHP local
+php -S localhost:8000
+
+#Démarre le serveur web
+docker compose up 
+```
