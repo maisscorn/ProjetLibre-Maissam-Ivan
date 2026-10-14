@@ -5,6 +5,7 @@ Voici ce que j'ai produit comme modèle conceptuel de données :
 <img width="1093" height="1098" alt="Modèle conceptuel de données" src="https://github.com/user-attachments/assets/20ba26df-271b-4d49-931d-eb8e489553bb" />
 
 J'ai ensuite demandé à l'IA de m'aider à développer le reste (MCD détaillé, MLD, MPD) pour gagner du temps.
+Elle a renommé "client" -> utilisateur, et a ajoutée quelques éléments utile comme dans image, son url et une légende(si besoin).
 
 ---
 
@@ -72,7 +73,7 @@ CREATE TABLE utilisateur (
     id_utilisateur INT AUTO_INCREMENT PRIMARY KEY,
     nom            VARCHAR(50)  NOT NULL,
     prenom         VARCHAR(50)  NOT NULL,
-    age            TINYINT UNSIGNED NOT NULL,
+    age            INT NOT NULL,
     email          VARCHAR(255) NOT NULL UNIQUE,
     mot_de_passe   VARCHAR(255) NOT NULL  -- stocke le hash de password_hash()
 );
