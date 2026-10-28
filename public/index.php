@@ -1,7 +1,7 @@
 <?php
 const DB_HOST = 's404t4.myd.infomaniak.com';
 const DB_PORT = 3306;
-const DB_NAME = 'my_database';
+const DB_NAME = 's404t4_progserv2_sportsniches';
 const DB_USER = 's404t4_nesammais';
 const DB_PASSWORD = 'ProgServ2_SportsNiches';
 
@@ -9,7 +9,7 @@ $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";c
 
 $pdo = new PDO($dsn, DB_USER, DB_PASSWORD);
 
-$sql = "SELECT * FROM my_table";
+$sql = "SELECT * FROM sport";
 
 $stmt = $pdo->prepare($sql);
 
@@ -28,18 +28,21 @@ $results = $stmt->fetchAll();
 </head>
 
 <body>
-    <h1>ProgServ2 Course PHP Template</h1>
+    <h1>Sports niches</h1>
 
-    <p>Bienvenue dans votre projet PHP pour le cours ProgServ2 à la HEIG-VD !</p>
+    <p>Bienvenue sur le sites des sports très peu connus</p>
 
-    <h2>Résultats de la base de données :</h2>
+    <h2>Liste des sports :</h2>
 
     <ul>
         <?php foreach ($results as $row) { ?>
-            <li>ID: <?= htmlspecialchars($row['id']) ?>
+            <li>
+                <strong><?= htmlspecialchars($row['nom']) ?></strong>
                 <ul>
-                    <li>Column1: <?= htmlspecialchars($row['column1']) ?></li>
-                    <li>Column2: <?= htmlspecialchars($row['column2']) ?></li>
+                    <li>Description : <?= htmlspecialchars($row['description']) ?></li>
+                    <li>Règles : <?= htmlspecialchars($row['regles']) ?></li>
+                    <li>Origine : <?= htmlspecialchars($row['origine']) ?></li>
+                    <li>Matériel : <?= htmlspecialchars($row['materiel']) ?></li>
                 </ul>
             </li>
         <?php } ?>
