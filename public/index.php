@@ -1,9 +1,9 @@
 <?php
-const DB_HOST = 'mariadb';
+const DB_HOST = 's404t4.myd.infomaniak.com';
 const DB_PORT = 3306;
 const DB_NAME = 'my_database';
-const DB_USER = 'username';
-const DB_PASSWORD = 'password';
+const DB_USER = 's404t4_nesammais';
+const DB_PASSWORD = 'ProgServ2_SportsNiches';
 
 $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=utf8mb4";
 
