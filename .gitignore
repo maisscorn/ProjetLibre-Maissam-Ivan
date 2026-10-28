@@ -12,3 +12,6 @@ Thumbs.db
 
 # Folder config file
 [Dd]esktop.ini
+
+#Configuration Locale (contient des mots de passes)
+config/database.ini
