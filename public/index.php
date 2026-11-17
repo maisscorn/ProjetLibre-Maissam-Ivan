@@ -25,13 +25,13 @@ $categories = $categoriesManager->getCategories();
 
     <?php foreach ($categories as $categorie) { ?>
         <h3><?= htmlspecialchars($categorie->getNom()) ?></h3>
-        <p><?= htmlspecialchars($categorie->getDescription()) ?></p>
+        <p><?= htmlspecialchars($categorie->getDescription() ?? '') ?></p>
 
         <ul>
             <?php foreach ($sportsManager->getSportsParCategorie($categorie->getId()) as $sport) { ?>
                 <li>
-                    <a href="sport.php?id=<?= $sport->getId() ?>"><?= htmlspecialchars($sport->getNom()) ?></a>
-                    : <?= htmlspecialchars($sport->getAccroche()) ?>
+                    <a href="sport.php?id=<?= htmlspecialchars($sport->getId()) ?>"><?= htmlspecialchars($sport->getNom()) ?></a>
+                    : <?= htmlspecialchars($sport->getAccroche() ?? '') ?>
                 </li>
             <?php } ?>
         </ul>

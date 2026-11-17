@@ -11,6 +11,13 @@ if (isset($_GET['id'])) {
     $id = 0;
 }
 
+
+// Validation : un id doit être un nombre positif
+if ($id <= 0) {
+    echo "Identifiant invalide.";
+    exit();
+}
+
 $sport = $sportsManager->getSport($id);
 
 // Si le sport n'existe pas, on affiche un message et on arrête
@@ -34,18 +41,18 @@ $categorie = $categoriesManager->getCategorie($sport->getIdCategorie());
     <p><a href="index.php">Accueil</a></p>
 
     <h1><?= htmlspecialchars($sport->getNom()) ?></h1>
-    <p><em><?= htmlspecialchars($sport->getAccroche()) ?></em></p>
+    <p><em><?= htmlspecialchars($sport->getAccroche() ?? '') ?></em></p>
     <p>Catégorie : <?= htmlspecialchars($categorie->getNom()) ?></p>
 
     <ul>
-        <li>Origine : <?= htmlspecialchars($sport->getOrigine()) ?></li>
-        <li>Joueurs : <?= htmlspecialchars($sport->getJoueurs()) ?></li>
-        <li>Terrain : <?= htmlspecialchars($sport->getTerrain()) ?></li>
-        <li>Contact : <?= htmlspecialchars($sport->getContact()) ?></li>
+        <li>Origine : <?= htmlspecialchars($sport->getOrigine() ?? '') ?></li>
+        <li>Joueurs : <?= htmlspecialchars($sport->getJoueurs() ?? '') ?></li>
+        <li>Terrain : <?= htmlspecialchars($sport->getTerrain() ?? '') ?></li>
+        <li>Contact : <?= htmlspecialchars($sport->getContact() ?? '') ?></li>
     </ul>
 
     <h2>En quoi ça consiste</h2>
-    <p><?= htmlspecialchars($sport->getDescription()) ?></p>
+    <p><?= htmlspecialchars($sport->getDescription() ?? '') ?></p>
 
     <h2>Les règles de base</h2>
     <ul>
